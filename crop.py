@@ -7,10 +7,10 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
 
-# Title
+
 st.title("🌱 Crop Recommendation with KNN")
 
-# Load dataset directly
+
 df = pd.read_csv("crop.csv")
 
 st.subheader("📊 Dataset Preview")
@@ -18,11 +18,11 @@ st.dataframe(df.head(5))
 
 st.write(f"**Unique districts:** {df['district'].nunique()}")
 
-# Features & Labels
+
 x = df[["N","P","K","temperature","humidity","ph","rainfall"]]
 y = df["label"]
 
-# Encode labels
+
 le_label = LabelEncoder()
 y = le_label.fit_transform(y)
 
